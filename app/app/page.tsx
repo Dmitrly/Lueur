@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Space_Grotesk, Montserrat, Nunito_Sans} from 'next/font/google'
 
 export const space_font = Space_Grotesk({
@@ -10,7 +9,8 @@ export const montserrat_font = Montserrat({
 })
 
 export const nunito_font = Nunito_Sans({
-  subsets: ['latin']
+  subsets: ['latin'],
+  display: 'swap'
 })
 export default function Home() {
   return (
