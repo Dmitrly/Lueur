@@ -7,13 +7,14 @@ export const space_font = Space_Grotesk({
 
 export const montserrat_font = Montserrat({
   subsets: ['latin'],
-  display: 'swap'
+  display: 'fallback'
 })
 
 export const nunito_font = Nunito_Sans({
   subsets: ['latin'],
   display: 'swap'
 })
+
 export default function Home() {
   return (
     <div className="">
