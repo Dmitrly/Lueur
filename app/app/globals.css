@@ -25,3 +25,9 @@ body {
     text-wrap: balance;
   }
 }
+
+
+input:focus{
+  border: none;
+  outline: none;
+}
