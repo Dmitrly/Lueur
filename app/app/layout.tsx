@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header/Header";
-import { montserrat_font } from "./page";
+import { montserrat_font } from "@/Fonts";
 
 
 

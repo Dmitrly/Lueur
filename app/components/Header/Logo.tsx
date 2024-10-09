@@ -1,4 +1,4 @@
-import { space_font } from "@/app/page";
+import { space_font } from "@/Fonts";
 
 
 export default function Logo (){
