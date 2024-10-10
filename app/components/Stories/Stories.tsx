@@ -5,8 +5,8 @@ import SingleStoryBtn from "./SingleStoryBtn"
 import { nunito_font } from "@/Fonts"
 
 
-
 const Stories: React.FC = () => {
+
     return (
         <>
             <div className="flex items-end gap-20 w-[57%] mx-auto mt-10">
