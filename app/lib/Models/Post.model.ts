@@ -1,4 +1,4 @@
-import mongoose, {Schema, model, models} from "mongoose";
+import {Schema, model, models} from "mongoose";
 
 
 export interface IPost {
@@ -7,7 +7,7 @@ export interface IPost {
     author_id: string,
     image?: string,
     likes: number,
-    body: string
+    body: string,
 }
 
 
@@ -16,7 +16,7 @@ const postScheme = new Schema<IPost>({
     author_id: {type: String, required: true},
     image: {type: String, required: false},
     likes: {type: Number, required: true},
-    body: {type: String, required: true}
-})
+    body: {type: String, required: true},
+}, {timestamps: true})
 
 export const Post = models.Post || model('Post', postScheme)

@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const connection: { isConnected?: number} = {}
+// const connection: { isConnected?: number} = {}
 
 export async function mongooseConnect(){
     if(mongoose.connection.readyState === 1){
