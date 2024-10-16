@@ -4,7 +4,7 @@ import BodyAuth from "@/components/Auth/BodyAuth"
 
 
 
-export const Auth: React.FC = () => {
+export const Registration: React.FC = () => {
     return (
         <>
             <div className="h-[100vh] w-[100vw] relative pt-10">
@@ -16,4 +16,4 @@ export const Auth: React.FC = () => {
     )
 }
 
-export default Auth
+export default Registration
