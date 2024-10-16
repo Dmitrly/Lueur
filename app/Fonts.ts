@@ -12,5 +12,5 @@ export const montserrat_font = Montserrat({
 
 export const nunito_font = Nunito_Sans({
   subsets: ['latin'],
-  display: 'swap'
+  display: 'optional'
 })
