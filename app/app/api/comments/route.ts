@@ -1,7 +1,6 @@
 import { Comment } from "@/lib/Models/Comment.model";
 import { Post } from "@/lib/Models/Post.model";
 import { mongooseConnect } from "@/lib/mongodb/Connect";
-import { NextApiResponse } from "next";
 import { NextResponse } from "next/server";
 
 
