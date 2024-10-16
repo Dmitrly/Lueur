@@ -1,5 +1,5 @@
-import {Schema, model, models} from "mongoose";
-import { commentSchema, IComment } from "./Comment";
+import mongoose, {Schema, model, models} from "mongoose";
+import { IComment } from "./Comment.model";
 
 
 export interface IPost {
@@ -9,17 +9,17 @@ export interface IPost {
     image?: string,
     likes: number,
     body: string,
-    comments?: Array<IComment> ,
+    comments?: Array<IComment>
 }
 
 
-const postScheme = new Schema<IPost>({
-    title: {type: String, required: true},
-    author_id: {type: String, required: true},
-    image: {type: String, required: false},
-    likes: {type: Number, required: true},
-    body: {type: String, required: true},
-    comments: [{type: Schema.Types.ObjectId, ref: 'Comment'}],
-}, {timestamps: true})
+const postSchema = new Schema<IPost>({
+    title: { type: String, required: true },
+    author_id: { type: String, required: true },
+    image: { type: String },
+    likes: { type: Number, required: true },
+    body: { type: String, required: true },
+    comments: [{type: Schema.Types.ObjectId, ref: 'Comment'}]
+}, { timestamps: true });
 
-export const Post = models.Post || model('Post', postScheme)
+export const Post = models.Post || model('Post', postSchema);

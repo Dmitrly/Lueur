@@ -65,7 +65,7 @@ const SinglePost: React.FC<IPost> = ({author_id, body, likes, title, _id, image,
 
                 {/* COMMENTS */}
                 <Comments comments={comments || []}/>
-                <AddCommentForm post_id={_id} displayForm={displayForm}/>
+                <AddCommentForm post_id={_id} displayForm={displayForm}/> 
             </div>
         </>
     )

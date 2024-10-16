@@ -1,9 +1,9 @@
 import { montserrat_font } from "@/Fonts"
-import { IComment } from "@/lib/Models/Comment"
+import { IComment } from "@/lib/Models/Comment.model"
 
 
 
-const SingleComment: React.FC<IComment> = ({body, createdAt}) => {
+const SingleComment: React.FC<IComment> = ({body}) => {
     return (
         <>
             <div className={` flex items-center justify-between`}>

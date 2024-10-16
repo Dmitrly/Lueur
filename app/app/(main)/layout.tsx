@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "../globals.css";
 import Header from "@/components/Header/Header";
-import { montserrat_font } from "@/Fonts";
+import { montserrat_font, nunito_font } from "@/Fonts";
 
 
 
@@ -18,8 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${montserrat_font.className} antialiased bg-[#eef0f2] text-black`}
+        className={`${nunito_font.className} antialiased bg-[#eef0f2] text-black`}
       >
+        <Header />
         {children}
       </body>
     </html>

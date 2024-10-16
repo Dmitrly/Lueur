@@ -11,7 +11,9 @@ const AddCommentForm: React.FC<IAddCommentForm> = ({post_id, displayForm}) => {
     const postComment = async (e:FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         // alert(body)
-        axios.post('/api/posts/comments', {body, post_id}).then(data => console.log(data))
+        // axios.post('/api/comments', {body, post_id}).then(data => console.log(data))
+        // axios.get('/api/comments').then(data => console.log((data)))
+        axios.post('/api/comments', {body, post_id}).then(data => console.log(data))
     }
     return (
         <>

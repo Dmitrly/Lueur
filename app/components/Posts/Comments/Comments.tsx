@@ -1,4 +1,4 @@
-import { IComment } from "@/lib/Models/Comment"
+import { IComment } from "@/lib/Models/Comment.model"
 import SingleComment from "./SingleComment"
 
 interface IComments {
@@ -9,7 +9,7 @@ interface IComments {
 const Comments: React.FC<IComments> = ({comments}) => {
     const renderedComments = comments?.map(comment => {
         return (
-            <SingleComment {...comment}/>
+            <SingleComment key={comment._id} {...comment}/>
         )
     })
     return (
