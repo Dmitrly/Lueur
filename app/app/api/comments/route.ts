@@ -12,7 +12,7 @@ export async function GET() {
     return NextResponse.json({message: 'hellow world'})
 }
 
-export async function POST(req: Request, res: NextApiResponse) {
+export async function POST(req: Request) {
     await mongooseConnect()
     const {body, post_id} = await req.json()
     const newComment = await Comment.create({body, author_id: '1'})

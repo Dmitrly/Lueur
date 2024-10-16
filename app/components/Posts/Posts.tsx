@@ -9,7 +9,7 @@ interface IPosts {
 }
 
 const Posts:React.FC<IPosts> = ({posts}) => {
-    const [active, whichActive] = useState<"popular" | "following">("popular")
+    const [active, setActive] = useState<"popular" | "following">("popular")
     const renderedPosts = posts?.map(post => {
         return (
             <SinglePost {...post} key={post._id}/>
@@ -21,7 +21,7 @@ const Posts:React.FC<IPosts> = ({posts}) => {
     return (
         <>
             <div className="w-[57%] mx-auto">
-                <PostsNavigation active={active}/>
+                <PostsNavigation active={active} setActive={setActive}/>
                 {renderedPosts}
             </div>
         </>

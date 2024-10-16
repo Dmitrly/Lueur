@@ -7,7 +7,7 @@ import AddCommentForm from "./Comments/AddCommentForm";
 
 
 
-const SinglePost: React.FC<IPost> = ({author_id, body, likes, title, _id, image, comments}) => {
+const SinglePost: React.FC<IPost> = ({body, _id, image, comments}) => {
     const [isLiked, setIsLiked] = useState<boolean>(false)
     const [displayForm, setDisplayForm] = useState<boolean>(false)
     return (

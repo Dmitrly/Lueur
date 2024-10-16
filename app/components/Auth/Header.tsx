@@ -1,4 +1,4 @@
-import { montserrat_font, nunito_font, space_font } from "@/Fonts"
+import { montserrat_font } from "@/Fonts"
 import Link from "next/link"
 
 
