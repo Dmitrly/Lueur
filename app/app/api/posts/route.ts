@@ -4,6 +4,6 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
     await mongooseConnect()
-    const posts = await Post.find()
+    const posts = await Post.find().populate('comments')
     return NextResponse.json(posts)
 }

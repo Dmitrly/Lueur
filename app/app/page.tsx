@@ -17,6 +17,9 @@ export default function Home() {
     fetchPosts().then(data => setPosts(data))
   }, [])
 
+  // useEffect(() => {
+  //   console.log(posts)
+  // }, [posts])
 
   return (
     <div className="">

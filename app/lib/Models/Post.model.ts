@@ -1,4 +1,5 @@
 import {Schema, model, models} from "mongoose";
+import { commentSchema, IComment } from "./Comment";
 
 
 export interface IPost {
@@ -8,6 +9,7 @@ export interface IPost {
     image?: string,
     likes: number,
     body: string,
+    comments?: Array<IComment> ,
 }
 
 
@@ -17,6 +19,7 @@ const postScheme = new Schema<IPost>({
     image: {type: String, required: false},
     likes: {type: Number, required: true},
     body: {type: String, required: true},
+    comments: [{type: Schema.Types.ObjectId, ref: 'Comment'}],
 }, {timestamps: true})
 
 export const Post = models.Post || model('Post', postScheme)
