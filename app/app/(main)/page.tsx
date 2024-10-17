@@ -18,12 +18,12 @@ export default function Home() {
   }
   
   useEffect(() => {
-    if(status !== 'authenticated'){
-      router.replace('/')
-      console.log("push")
-    }else{
+    // if(status !== 'authenticated'){
+    //   router.replace('/')
+    //   console.log("push")
+    // }else{
       fetchPosts().then(data => setPosts(data))
-    }
+    // }
   }, [status])
 
   // useEffect(() => {
