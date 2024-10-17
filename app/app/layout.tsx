@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { montserrat_font } from "@/Fonts";
-
+import { Providers } from "@/components/Auth/Providers";
 
 
 export const metadata: Metadata = {
@@ -15,12 +15,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${montserrat_font.className} antialiased bg-[#eef0f2] text-black`}
-      >
-        {children}
-      </body>
-    </html>
+      <html lang="en">
+        <body
+          className={`${montserrat_font.className} antialiased bg-[#eef0f2] text-black`}
+        >
+          <Providers>
+            {children}
+          </Providers>
+        </body>
+      </html>
   );
 }
