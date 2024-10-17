@@ -6,7 +6,7 @@ import { NextResponse } from "next/server";
 
 
 
-export async function POST(req: Request, res: NextApiResponse) {
+export async function POST(req: Request) {
     await mongooseConnect()
     const {name, email, password} = await req.json()
     const newUser = await User.create({name, email, password, posts: [], following: [], followers: [], interests: []})
