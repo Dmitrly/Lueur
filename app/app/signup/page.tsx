@@ -7,6 +7,7 @@ import { FormEvent, useState } from 'react';
 import { IUser } from '@/lib/Models/User.model';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
+import Swal from 'sweetalert2';
 
 
 const Signup:React.FC = () => {
@@ -15,10 +16,39 @@ const Signup:React.FC = () => {
     const signupUser = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         // console.log(newUser)
-        axios.post('/api/users', newUser).then(res => {
-            console.log(res)
-            router.push('/login')
-        })
+        if(!newUser.name.trim()){
+            Swal.fire({
+                title: "Ooops...",
+                text: 'Name can not be empty.',
+                icon: 'error'
+            })
+        }else if(!newUser.email.trim()){
+            Swal.fire({
+                title: "Ooops...",
+                text: 'Email can not be empty.',
+                icon: 'error'
+            })
+        }else if(newUser.password.length < 4){
+            Swal.fire({
+                title: "Ooops...",
+                text: 'Password is too short.',
+                icon: 'error'
+            })
+        }else{
+            axios.post('/api/users', newUser)
+            .then(res => {
+                console.log(res)
+                router.push('/login')
+            })
+            .catch(e => {
+                console.log(e)
+                Swal.fire({
+                    title: "Ooops...",
+                    text: e.response?.data || e.message,
+                    icon: 'error'
+                })
+            })
+        }
 
     }
     return (
