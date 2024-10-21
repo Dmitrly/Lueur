@@ -27,9 +27,10 @@ export const authConfig = {
                         }else{
                             throw new Error("Invalid password.")
                         }
+                    }else{
+                        throw new Error("User with this email doesn't exist.")
                     }
                 }catch(e: any){
-                    console.log("Error:", e)
                     throw new Error(e)
                 }
             },
