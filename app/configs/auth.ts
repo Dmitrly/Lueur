@@ -18,6 +18,7 @@ export const authConfig = {
                 try{
                     await mongooseConnect()
                     const foundUser = await User.findOne({ email: credentials.email })
+                    console.log(foundUser)
                     if(foundUser){
                         // const isPasswordCorrect = await bcrypt.compare(credentials.password, foundUser.password)
                         const isPasswordCorrect = credentials.password == foundUser.password

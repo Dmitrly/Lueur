@@ -26,9 +26,9 @@ export default function Home() {
     // }
   }, [status])
 
-  // useEffect(() => {
-  //   console.log(posts)
-  // }, [posts])
+  useEffect(() => {
+    console.log(posts[0])
+  }, [posts])
 
   return (
     <div className="">

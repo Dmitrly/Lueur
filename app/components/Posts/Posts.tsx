@@ -5,14 +5,14 @@ import { useEffect, useState } from "react"
 import SinglePost from "./SinglePost"
 
 interface IPosts {
-    posts: Array<IPost>
+    posts: Array<IPost>,
 }
 
 const Posts:React.FC<IPosts> = ({posts}) => {
     const [active, setActive] = useState<"popular" | "following">("popular")
     const renderedPosts = posts?.map(post => {
         return (
-            <SinglePost {...post} key={post._id}/>
+            <SinglePost {...post} key={post._id} />
         )
     })
     useEffect(() => {

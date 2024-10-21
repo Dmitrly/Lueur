@@ -4,12 +4,16 @@ import { IPost } from "@/lib/Models/Post.model";
 import { useState } from "react";
 import Comments from "./Comments/Comments";
 import AddCommentForm from "./Comments/AddCommentForm";
+import { IComment } from "@/lib/Models/Comment.model";
+
+
 
 
 
 const SinglePost: React.FC<IPost> = ({body, _id, image, comments}) => {
     const [isLiked, setIsLiked] = useState<boolean>(false)
-    const [displayForm, setDisplayForm] = useState<boolean>(false)
+    const [displayForm, setDisplayForm] = useState<boolean>(true)
+    const [postComments, setPostComments] = useState<Array<IComment>>(comments || [])
     return (
         <>
             <div style={{boxShadow: '0px 5px 6px 5px #E6E5E5'}} className={`relative bg-white py-8 px-10 rounded-3xl w-[900px] mt-10 ${nunito_font.className} tracking-wider`}>
@@ -64,8 +68,8 @@ const SinglePost: React.FC<IPost> = ({body, _id, image, comments}) => {
                 </div>
 
                 {/* COMMENTS */}
-                <Comments comments={comments || []}/>
-                <AddCommentForm post_id={_id} displayForm={displayForm}/> 
+                <Comments comments={postComments}/>
+                <AddCommentForm post_id={_id} displayForm={displayForm} setPostComments={setPostComments}/> 
             </div>
         </>
     )

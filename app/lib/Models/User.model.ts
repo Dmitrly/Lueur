@@ -12,7 +12,8 @@ export interface IUser {
     posts?: Array<IPost>,
     following?: Array<IUser>,
     followers?: Array<IUser>,
-    interests?: Array<string>
+    interests?: Array<string>,
+    image: string
 }
 
 
@@ -23,7 +24,8 @@ const userScheme = new Schema<IUser>({
     posts: [{type: Schema.Types.ObjectId, ref: 'Post'}],
     following: [{type: Schema.Types.ObjectId, ref: 'User'}],
     followers: [{type: Schema.Types.ObjectId, ref: 'User'}],
-    interests: [String]
+    interests: [String],
+    image: {type: String, default: 'https://i.pinimg.com/736x/11/2e/ed/112eed3d853b916838839a7438977cfb.jpg'}
 })
 
 export const User = models.User || model('User', userScheme)
