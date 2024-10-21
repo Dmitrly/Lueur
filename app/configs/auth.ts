@@ -20,13 +20,16 @@ export const authConfig = {
                     const foundUser = await User.findOne({ email: credentials.email })
                     if(foundUser){
                         // const isPasswordCorrect = await bcrypt.compare(credentials.password, foundUser.password)
-                        // const isPasswordCorrect = credentials.password == foundUser.password
-                        const isPasswordCorrect = true
+                        const isPasswordCorrect = credentials.password == foundUser.password
+                        // const isPasswordCorrect = true
                         if(isPasswordCorrect){
                             return foundUser
+                        }else{
+                            throw new Error("Invalid password.")
                         }
                     }
                 }catch(e: any){
+                    console.log("Error:", e)
                     throw new Error(e)
                 }
             },
