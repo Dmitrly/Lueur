@@ -13,7 +13,7 @@ const SingleComment: React.FC<IComment> = ({body, author}) => {
                     <div className="rounded-full h-[50px] w-[50px] overflow-hidden flex items-center justify-center">
                         <img src={author?.image || data?.user?.image || ""} alt="avatar" />
                     </div>
-                    <h3 className="text-sm tracking-widest text-[#8992c9] font-bold">{author?.name || "Name"}</h3>
+                    <h3 className="text-sm tracking-widest text-[#8992c9] font-bold">{ author?.name || data?.user?.name || "Name"}</h3>
                     <p className={`${montserrat_font.className} text-[12px] text-[#9f9e9e]`}>{body}</p>
                 </div>
                 

@@ -21,7 +21,7 @@ const AddCommentForm: React.FC<IAddCommentForm> = ({post_id, displayForm, setPos
             axios.post('/api/comments', {body, post_id, author_email: data?.user?.email}).then(data =>{
                 console.log(data.data)
                 setPostComments(prev => [...prev, data.data])
-    
+                setBody('')
             })
         }
     }
